@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Online Coaching | Build Your Strongest Version</title>
+  <meta name="description" content="Premium online fitness coaching with personalized training, nutrition plans, and WhatsApp accountability. Choose your package and start your transformation today." />
+  <meta name="keywords" content="online coaching, fitness coach, personal training, nutrition plan, workout program, transformation" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
+  <link rel="canonical" href="https://premiumcoaching.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Premium Online Coaching | Build Your Strongest Version" />
+  <meta property="og:description" content="Premium online fitness coaching with personalized training, nutrition plans, and WhatsApp accountability." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://premiumcoaching.com/" />
+  <meta property="og:image" content="https://premiumcoaching.com/assets/coach-fullbody.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Premium Online Coaching | Build Your Strongest Version" />
+  <meta name="twitter:description" content="Premium online fitness coaching with personalized training, nutrition plans, and WhatsApp accountability." />
+  <meta name="twitter:image" content="https://premiumcoaching.com/assets/coach-fullbody.jpg" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Premium Online Coaching Platform",
+    "description": "Premium online fitness coaching subscription platform with package selection, payment proof upload, and WhatsApp enrollment.",
+    "url": "https://premiumcoaching.com/",
+    "author": {
+      "@type": "Person",
+      "name": "Coach",
+      "jobTitle": "Fitness Coach"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "EGP",
+      "lowPrice": "1500",
+      "highPrice": "5000",
+      "offerCount": "3"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#packages">Skip to packages</a>
+
+  <header class="site-header" aria-label="Main navigation">
+    <nav class="nav container">
+      <a class="brand" href="#top" aria-label="Premium Coaching home">
+        <span class="brand__mark" aria-hidden="true">PC</span>
+        <span class="brand__text">Premium Coaching</span>
+      </a>
+
+      <div class="nav__links" aria-label="Page links">
+        <a href="#packages">Packages</a>
+        <a href="#process">Process</a>
+        <a href="#trust">Results</a>
+      </div>
+
+      <a class="nav__cta" href="#packages">Join Now</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="hero__ambient hero__ambient--one" aria-hidden="true"></div>
+      <div class="hero__ambient hero__ambient--two" aria-hidden="true"></div>
+
+      <div class="hero__inner container">
+        <div class="hero__copy reveal-in reveal">
+          <p class="eyebrow"><span></span> Private online coaching</p>
+          <h1 id="hero-title">Build Your <span class="gradient-text">Strongest</span> Version</h1>
+          <p class="hero__lead" id="typewriter">Professional online coaching designed for real transformation.</p>
+          <p class="hero__description">
+            A premium, structured coaching experience for clients who want precise training, nutrition clarity,
+            accountability, and a private transformation system built around their lifestyle.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--magnetic" href="#packages">Choose Your Package</a>
+            <a class="btn btn--ghost btn--magnetic" href="#process">How it works</a>
+          </div>
+
+          <div class="trust-strip" aria-label="Trust indicators">
+            <div class="trust-strip__item">
+              <strong>1:1</strong>
+              <span>Coach Review</span>
+            </div>
+            <div class="trust-strip__item">
+              <strong>24h</strong>
+              <span>Plan Setup</span>
+            </div>
+            <div class="trust-strip__item">
+              <strong>VIP</strong>
+              <span>WhatsApp Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal-in reveal-in--delay reveal" aria-label="Coach image area">
+          <div class="coach-card">
+            <div class="coach-card__shine" aria-hidden="true"></div>
+            <div class="coach-card__topline">
+              <span>Elite Conditioning</span>
+              <span>Since 2026</span>
+            </div>
+
+            <div class="coach-portrait">
+              <img
+                class="coach-photo coach-photo--primary"
+                src="assets/coach-fullbody.jpg"
+                alt="Coach posing in a dark luxury gym"
+                width="864"
+                height="1152"
+                loading="eager"
+                decoding="async"
+              />
+              <figure class="coach-photo-card" aria-label="Coach close-up training portrait">
+                <img
+                  class="coach-photo coach-photo--secondary"
+                  src="assets/coach-closeup.jpg"
+                  alt="Close-up portrait of the coach after training"
+                  width="864"
+                  height="1152"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>Real coach profile</figcaption>
+              </figure>
+            </div>
+
+            <div class="coach-card__panel glass-card">
+              <span class="panel-kicker">Transformation System</span>
+              <strong>Training • Nutrition • Accountability</strong>
+              <p>Built for serious clients who want measurable progress.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES SECTION -->
+    <section class="packages section" id="packages" aria-labelledby="packages-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Membership packages</p>
+          <h2 id="packages-title">Choose your coaching tier</h2>
+          <p>
+            Select the level of support that matches your goal. Every package is built with a premium onboarding
+            experience and clear payment confirmation flow.
+          </p>
+        </div>
+
+        <div class="package-grid stagger-children" role="list">
+          <article class="package-card glass-border-glow" role="listitem" tabindex="0" data-package-name="Starter Package" data-price="EGP 1,500" data-duration="4 Weeks">
+            <div class="package-card__header">
+              <p class="package-card__label">Foundation</p>
+              <h3>Starter Package</h3>
+              <p class="package-card__duration">4 Weeks</p>
+            </div>
+            <div class="package-card__price">
+              <span>EGP</span>
+              <strong>1,500</strong>
+            </div>
+            <ul class="feature-list">
+              <li>Personalized training split</li>
+              <li>Basic nutrition targets</li>
+              <li>Weekly progress check-in</li>
+              <li>WhatsApp support window</li>
+            </ul>
+            <button class="btn btn--card subscribe-btn" type="button">Subscribe</button>
+          </article>
+
+          <article class="package-card package-card--featured is-selected animate-glow glass-border-glow" role="listitem" tabindex="0" data-package-name="Pro Package" data-price="EGP 2,800" data-duration="8 Weeks">
+            <div class="popular-badge">Most Chosen</div>
+            <div class="package-card__header">
+              <p class="package-card__label">Transformation</p>
+              <h3>Pro Package</h3>
+              <p class="package-card__duration">8 Weeks</p>
+            </div>
+            <div class="package-card__price">
+              <span>EGP</span>
+              <strong>2,800</strong>
+            </div>
+            <ul class="feature-list">
+              <li>Advanced custom training plan</li>
+              <li>Nutrition strategy and updates</li>
+              <li>Two check-ins every week</li>
+              <li>Exercise form review</li>
+              <li>Progress tracking dashboard</li>
+            </ul>
+            <button class="btn btn--card subscribe-btn" type="button">Subscribe</button>
+          </article>
+
+          <article class="package-card glass-border-glow" role="listitem" tabindex="0" data-package-name="Elite Package" data-price="EGP 5,000" data-duration="12 Weeks">
+            <div class="package-card__header">
+              <p class="package-card__label">Private club</p>
+              <h3>Elite Package</h3>
+              <p class="package-card__duration">12 Weeks</p>
+            </div>
+            <div class="package-card__price">
+              <span>EGP</span>
+              <strong>5,000</strong>
+            </div>
+            <ul class="feature-list">
+              <li>Full transformation roadmap</li>
+              <li>Daily accountability support</li>
+              <li>Priority WhatsApp access</li>
+              <li>Weekly private video review</li>
+              <li>Training and nutrition optimization</li>
+            </ul>
+            <button class="btn btn--card subscribe-btn" type="button">Subscribe</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-heading section-heading--split reveal">
+          <div>
+            <p class="eyebrow"><span></span> Seamless enrollment</p>
+            <h2 id="process-title">A private checkout experience built for trust</h2>
+          </div>
+          <p>
+            Select your package, pay through the displayed method, upload proof, confirm your information, and send the
+            pre-written WhatsApp message to finalize your subscription.
+          </p>
+        </div>
+
+        <div class="process-grid stagger-children">
+          <article class="process-card glass-card">
+            <span>01</span>
+            <h3>Select package</h3>
+            <p>Choose Starter, Pro, or Elite based on the intensity of support you need.</p>
+          </article>
+          <article class="process-card glass-card">
+            <span>02</span>
+            <h3>Transfer payment</h3>
+            <p>Use Vodafone Cash or InstaPay and keep your transfer screenshot ready.</p>
+          </article>
+          <article class="process-card glass-card">
+            <span>03</span>
+            <h3>Confirm on WhatsApp</h3>
+            <p>Send your details and attach the payment proof inside the coach chat.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="trust section" id="trust" aria-labelledby="trust-title">
+      <div class="container trust__inner glass-card glass-card--strong reveal-scale">
+        <div>
+          <p class="eyebrow"><span></span> Premium standards</p>
+          <h2 id="trust-title">Built for serious transformation clients</h2>
+        </div>
+        <div class="trust-metrics stagger-children">
+          <div>
+            <strong>100%</strong>
+            <span>Manual review</span>
+          </div>
+          <div>
+            <strong>Secure</strong>
+            <span>Payment proof flow</span>
+          </div>
+          <div>
+            <strong>Private</strong>
+            <span>WhatsApp onboarding</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAYMENT MODAL SECTION -->
+  <div class="modal" id="subscriptionModal" hidden aria-hidden="true">
+    <div class="modal__backdrop" data-modal-close></div>
+    <section class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" tabindex="-1">
+      <button class="modal__close" type="button" aria-label="Close subscription modal" data-modal-close>
+        <span aria-hidden="true">×</span>
+      </button>
+
+      <div class="modal__header">
+        <p class="eyebrow"><span></span> Secure enrollment</p>
+        <h2 id="modalTitle">Complete your subscription</h2>
+        <p id="modalDescription">Review payment instructions, upload your transfer proof, then confirm on WhatsApp.</p>
+      </div>
+
+      <div class="modal__selected glass-card glass-card--strong" aria-live="polite">
+        <span>Selected package</span>
+        <strong id="selectedPackageLabel">Pro Package</strong>
+        <small id="selectedPackageMeta">EGP 2,800 • 8 Weeks</small>
+      </div>
+
+      <div class="checkout-step" id="checkoutStep">
+        <div class="modal__grid">
+          <section class="payment-panel" aria-labelledby="payment-title">
+            <h3 id="payment-title">Payment Methods</h3>
+            <p class="panel-text">Transfer your package fee using one of the options below, then upload a screenshot of the successful transaction.</p>
+
+            <div class="payment-methods">
+              <article class="payment-card glass-card">
+                <div class="payment-card__icon" aria-hidden="true">VC</div>
+                <div class="payment-card__content">
+                  <h4>Vodafone Cash</h4>
+                  <p>Account name: <strong>Coach Name</strong></p>
+                  <code id="vodafoneNumber">0100 000 0000</code>
+                </div>
+                <button class="copy-button" type="button" data-copy-target="vodafoneNumber">Copy</button>
+              </article>
+
+              <article class="payment-card glass-card">
+                <div class="payment-card__icon" aria-hidden="true">IP</div>
+                <div class="payment-card__content">
+                  <h4>InstaPay</h4>
+                  <p>Account name: <strong>Coach Name</strong></p>
+                  <code id="instapayAddress">coachname@instapay</code>
+                </div>
+                <button class="copy-button" type="button" data-copy-target="instapayAddress">Copy</button>
+              </article>
+            </div>
+
+            <div class="warning-card" role="note">
+              <strong>Important</strong>
+              <p>Only completed transfers with a clear screenshot will be reviewed. Please make sure the amount, date, and recipient are visible.</p>
+            </div>
+          </section>
+
+          <section class="customer-panel" aria-labelledby="customer-title">
+            <h3 id="customer-title">Customer Information</h3>
+            <form class="customer-form" id="customerForm" novalidate>
+              <div class="field-group">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Your full name" required aria-describedby="fullNameError" />
+                <p class="field-error" id="fullNameError" aria-live="polite"></p>
+              </div>
+
+              <div class="field-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input id="phoneNumber" name="phoneNumber" type="tel" autocomplete="tel" inputmode="tel" placeholder="01XXXXXXXXX" required aria-describedby="phoneNumberError" />
+                <p class="field-error" id="phoneNumberError" aria-live="polite"></p>
+              </div>
+
+              <div class="field-group">
+                <label for="paymentProof">Upload Payment Screenshot</label>
+                <div class="upload-box" id="uploadBox" tabindex="0" role="button" aria-label="Upload payment proof screenshot">
+                  <input id="paymentProof" name="paymentProof" type="file" accept="image/*,.heic,.heif" hidden aria-describedby="paymentProofError" />
+
+                  <div class="upload-placeholder" id="uploadPlaceholder">
+                    <div class="upload-icon" aria-hidden="true">
+                      <span></span>
+                    </div>
+                    <strong>Upload Payment Proof</strong>
+                    <p>Tap to choose from gallery or drag and drop your screenshot here.</p>
+                    <small>JPG, PNG, WEBP, HEIC • Max 5MB</small>
+                  </div>
+
+                  <div class="upload-loading" id="uploadLoading" hidden>
+                    <span class="spinner" aria-hidden="true"></span>
+                    <strong>Preparing preview...</strong>
+                  </div>
+
+                  <div class="upload-preview" id="uploadPreview" hidden>
+                    <img id="uploadPreviewImage" src="" alt="Uploaded payment proof preview" />
+                    <div>
+                      <strong id="uploadFileName">payment-proof.jpg</strong>
+                      <small id="uploadFileMeta">Ready for confirmation</small>
+                    </div>
+                  </div>
+                </div>
+                <p class="field-error" id="paymentProofError" aria-live="polite"></p>
+              </div>
+
+              <button class="btn btn--primary btn--full" type="submit">Review &amp; Confirm</button>
+            </form>
+          </section>
+        </div>
+      </div>
+
+      <!-- PAYMENT CONFIRMATION SCREEN -->
+      <div class="confirmation-step" id="confirmationStep" hidden>
+        <section class="confirmation-card glass-card" aria-labelledby="confirmation-title">
+          <div class="success-line">
+            <span aria-hidden="true">✓</span>
+            <h3 id="confirmation-title">Screenshot uploaded successfully</h3>
+          </div>
+
+          <div class="arabic-notice" dir="rtl" role="note">
+            <strong>هام جداً:</strong>
+            <p>يجب إرسال صورة إثبات الدفع للكوتش داخل محادثة واتساب، ولن يتم تأكيد الاشتراك بدون صورة التحويل.</p>
+          </div>
+
+          <div class="confirmation-layout">
+            <div class="confirmation-image-wrap">
+              <img id="confirmationImage" src="" alt="Payment screenshot preview" />
+            </div>
+
+            <div class="confirmation-details">
+              <h4>Subscription details</h4>
+              <dl>
+                <div>
+                  <dt>Package</dt>
+                  <dd id="confirmPackage">Pro Package</dd>
+                </div>
+                <div>
+                  <dt>Price</dt>
+                  <dd id="confirmPrice">EGP 2,800</dd>
+                </div>
+                <div>
+                  <dt>Duration</dt>
+                  <dd id="confirmDuration">8 Weeks</dd>
+                </div>
+                <div>
+                  <dt>Full Name</dt>
+                  <dd id="confirmName">-</dd>
+                </div>
+                <div>
+                  <dt>Phone Number</dt>
+                  <dd id="confirmPhone">-</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          <label class="commitment-check" for="proofCommitment">
+            <input id="proofCommitment" type="checkbox" />
+            <span>أتعهد بإرسال صورة إثبات الدفع مع رسالة واتساب.</span>
+          </label>
+
+          <div class="confirmation-actions">
+            <button class="btn btn--primary" id="openWhatsAppBtn" type="button" disabled>Open WhatsApp</button>
+            <button class="btn btn--ghost" id="changeScreenshotBtn" type="button">Change Screenshot</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
