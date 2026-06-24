@@ -7,7 +7,7 @@
   <meta name="description" content="Premium online fitness coaching with personalized training, nutrition plans, and WhatsApp accountability. Choose your package and start your transformation today." />
   <meta name="keywords" content="online coaching, fitness coach, personal training, nutrition plan, workout program, transformation" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#050505" />
+  <meta name="theme-color" content="#030303" />
   <link rel="canonical" href="https://premiumcoaching.com/" />
 
   <!-- Open Graph -->
@@ -33,7 +33,7 @@
     "url": "https://premiumcoaching.com/",
     "author": {
       "@type": "Person",
-      "name": "Coach",
+      "name": "Ahmed Hatem",
       "jobTitle": "Fitness Coach"
     },
     "offers": {
@@ -46,6 +46,9 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900;950&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="app.js" defer></script>
 </head>
@@ -55,11 +58,11 @@
 
   <a class="skip-link" href="#packages">Skip to packages</a>
 
-  <header class="site-header" aria-label="Main navigation">
+  <header class="site-header" id="siteHeader" aria-label="Main navigation">
     <nav class="nav container">
-      <a class="brand" href="#top" aria-label="Premium Coaching home">
-        <span class="brand__mark" aria-hidden="true">PC</span>
-        <span class="brand__text">Premium Coaching</span>
+      <a class="brand" href="#top" aria-label="Ahmed Hatem home">
+        <img class="brand__mark" src="logo.png" alt="Ahmed Hatem" width="40" height="40" />
+        <span class="brand__text">Ahmed Hatem</span>
       </a>
 
       <div class="nav__links" aria-label="Page links">
@@ -77,11 +80,12 @@
     <section class="hero section" aria-labelledby="hero-title">
       <div class="hero__ambient hero__ambient--one" aria-hidden="true"></div>
       <div class="hero__ambient hero__ambient--two" aria-hidden="true"></div>
+      <div class="hero__ambient hero__ambient--three" aria-hidden="true"></div>
 
       <div class="hero__inner container">
         <div class="hero__copy reveal-in reveal">
           <p class="eyebrow"><span></span> Private online coaching</p>
-          <h1 id="hero-title">Build Your <span class="gradient-text">Strongest</span> Version</h1>
+          <h1 id="hero-title">Build Your <span class="brand-text">Strongest</span> Version</h1>
           <p class="hero__lead" id="typewriter">Professional online coaching designed for real transformation.</p>
           <p class="hero__description">
             A premium, structured coaching experience for clients who want precise training, nutrition clarity,
@@ -90,7 +94,7 @@
 
           <div class="hero__actions">
             <a class="btn btn--primary btn--magnetic" href="#packages">Choose Your Package</a>
-            <a class="btn btn--ghost btn--magnetic" href="#process">How it works</a>
+            <a class="btn btn--ghost btn--magnetic" href="#process">How It Works</a>
           </div>
 
           <div class="trust-strip" aria-label="Trust indicators">
@@ -143,7 +147,7 @@
 
             <div class="coach-card__panel glass-card">
               <span class="panel-kicker">Transformation System</span>
-              <strong>Training • Nutrition • Accountability</strong>
+              <strong>Training · Nutrition · Accountability</strong>
               <p>Built for serious clients who want measurable progress.</p>
             </div>
           </div>
@@ -155,7 +159,6 @@
     <section class="packages section" id="packages" aria-labelledby="packages-title">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow"><span></span> Membership packages</p>
           <h2 id="packages-title">Choose your coaching tier</h2>
           <p>
             Select the level of support that matches your goal. Every package is built with a premium onboarding
@@ -164,10 +167,10 @@
         </div>
 
         <div class="package-grid stagger-children" role="list">
-          <article class="package-card glass-border-glow" role="listitem" tabindex="0" data-package-name="Starter Package" data-price="EGP 1,500" data-duration="4 Weeks">
+          <article class="package-card package-card--beta" role="listitem" tabindex="0" data-package-name="Beta Package" data-price="EGP 1,500" data-duration="4 Weeks">
             <div class="package-card__header">
               <p class="package-card__label">Foundation</p>
-              <h3>Starter Package</h3>
+              <h3>Beta Package</h3>
               <p class="package-card__duration">4 Weeks</p>
             </div>
             <div class="package-card__price">
@@ -183,11 +186,11 @@
             <button class="btn btn--card subscribe-btn" type="button">Subscribe</button>
           </article>
 
-          <article class="package-card package-card--featured is-selected animate-glow glass-border-glow" role="listitem" tabindex="0" data-package-name="Pro Package" data-price="EGP 2,800" data-duration="8 Weeks">
+          <article class="package-card package-card--featured is-selected animate-glow glass-border-glow" role="listitem" tabindex="0" data-package-name="Alpha Package" data-price="EGP 2,800" data-duration="8 Weeks">
             <div class="popular-badge">Most Chosen</div>
             <div class="package-card__header">
               <p class="package-card__label">Transformation</p>
-              <h3>Pro Package</h3>
+              <h3>Alpha Package</h3>
               <p class="package-card__duration">8 Weeks</p>
             </div>
             <div class="package-card__price">
@@ -204,10 +207,10 @@
             <button class="btn btn--card subscribe-btn" type="button">Subscribe</button>
           </article>
 
-          <article class="package-card glass-border-glow" role="listitem" tabindex="0" data-package-name="Elite Package" data-price="EGP 5,000" data-duration="12 Weeks">
+          <article class="package-card package-card--gamma" role="listitem" tabindex="0" data-package-name="Gamma Package" data-price="EGP 5,000" data-duration="12 Weeks">
             <div class="package-card__header">
               <p class="package-card__label">Private club</p>
-              <h3>Elite Package</h3>
+              <h3>Gamma Package</h3>
               <p class="package-card__duration">12 Weeks</p>
             </div>
             <div class="package-card__price">
@@ -232,8 +235,7 @@
       <div class="container">
         <div class="section-heading section-heading--split reveal">
           <div>
-            <p class="eyebrow"><span></span> Seamless enrollment</p>
-            <h2 id="process-title">A private checkout experience built for trust</h2>
+            <h2 id="process-title">Your enrollment,<br>built for trust</h2>
           </div>
           <p>
             Select your package, pay through the displayed method, upload proof, confirm your information, and send the
@@ -261,11 +263,125 @@
       </div>
     </section>
 
+    <!-- TRANSFORMATIONS SECTION -->
+    <section class="transformations section" id="transformations" aria-labelledby="transformations-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2 id="transformations-title">Real transformations</h2>
+        </div>
+        <div class="results-grid stagger-children">
+          <article class="result-card glass-card">
+            <div class="result-card__visual">
+              <div class="result-card__compare result-card__compare--before">
+                <svg class="result-card__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h6l2-4 2 8 2-4 2 4 2-4 2 4h2"/><path d="M3 6v12"/></svg>
+                <span>Before</span>
+              </div>
+              <div class="result-card__divider" aria-hidden="true"></div>
+              <div class="result-card__compare result-card__compare--after">
+                <svg class="result-card__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h6l2-4 2 8 2-4 2 4 2-4 2 4h2"/><path d="M21 6v12"/></svg>
+                <span>After</span>
+              </div>
+            </div>
+            <div class="result-card__body">
+              <div class="result-card__stat">
+                <strong>12</strong>
+                <span>kg lost</span>
+              </div>
+              <p class="result-card__meta">12 weeks · Alpha package</p>
+            </div>
+          </article>
+          <article class="result-card glass-card">
+            <div class="result-card__visual">
+              <div class="result-card__compare result-card__compare--before">
+                <svg class="result-card__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h6l2-4 2 8 2-4 2 4 2-4 2 4h2"/><path d="M3 6v12"/></svg>
+                <span>Before</span>
+              </div>
+              <div class="result-card__divider" aria-hidden="true"></div>
+              <div class="result-card__compare result-card__compare--after">
+                <svg class="result-card__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h6l2-4 2 8 2-4 2 4 2-4 2 4h2"/><path d="M21 6v12"/></svg>
+                <span>After</span>
+              </div>
+            </div>
+            <div class="result-card__body">
+              <div class="result-card__stat">
+                <strong>8</strong>
+                <span>kg lost</span>
+              </div>
+              <p class="result-card__meta">8 weeks · Alpha package</p>
+            </div>
+          </article>
+          <article class="result-card glass-card">
+            <div class="result-card__visual">
+              <div class="result-card__compare result-card__compare--before">
+                <svg class="result-card__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h6l2-4 2 8 2-4 2 4 2-4 2 4h2"/><path d="M3 6v12"/></svg>
+                <span>Before</span>
+              </div>
+              <div class="result-card__divider" aria-hidden="true"></div>
+              <div class="result-card__compare result-card__compare--after">
+                <svg class="result-card__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h6l2-4 2 8 2-4 2 4 2-4 2 4h2"/><path d="M21 6v12"/></svg>
+                <span>After</span>
+              </div>
+            </div>
+            <div class="result-card__body">
+              <div class="result-card__stat">
+                <strong>16</strong>
+                <span>kg lost</span>
+              </div>
+              <p class="result-card__meta">16 weeks · Gamma package</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACH GALLERY SECTION -->
+    <section class="gallery section" id="gallery" aria-label="Coach gallery">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>Behind the coaching</h2>
+        </div>
+        <div class="gallery-grid stagger-children">
+          <figure class="gallery-card glass-card">
+            <img
+              class="gallery-img"
+              src="assets/cot1.jpg"
+              alt="Coach Ahmed Hatem training"
+              width="864"
+              height="1152"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure class="gallery-card glass-card gallery-card--tall">
+            <img
+              class="gallery-img"
+              src="assets/cot2.jpg"
+              alt="Coach Ahmed Hatem in action"
+              width="864"
+              height="1152"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure class="gallery-card glass-card">
+            <img
+              class="gallery-img"
+              src="assets/cot3.jpg"
+              alt="Coach Ahmed Hatem lifestyle"
+              width="864"
+              height="1152"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- TRUST SECTION -->
     <section class="trust section" id="trust" aria-labelledby="trust-title">
       <div class="container trust__inner glass-card glass-card--strong reveal-scale">
         <div>
-          <p class="eyebrow"><span></span> Premium standards</p>
           <h2 id="trust-title">Built for serious transformation clients</h2>
         </div>
         <div class="trust-metrics stagger-children">
@@ -286,16 +402,33 @@
     </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img class="brand__mark" src="logo.png" alt="Ahmed Hatem" width="32" height="32" />
+        <span>Ahmed Hatem</span>
+      </div>
+      <p class="footer__tagline">Elite online fitness coaching – built for those who demand more.</p>
+      <div class="footer__social">
+        <a class="footer__social-link" href="https://www.instagram.com/coach_ahmedhatem133/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>@coach_ahmedhatem133</span>
+        </a>
+      </div>
+      <p class="footer__copyright">&copy; 2026 Ahmed Hatem. All rights reserved.</p>
+    </div>
+  </footer>
+
   <!-- PAYMENT MODAL SECTION -->
   <div class="modal" id="subscriptionModal" hidden aria-hidden="true">
     <div class="modal__backdrop" data-modal-close></div>
     <section class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" tabindex="-1">
       <button class="modal__close" type="button" aria-label="Close subscription modal" data-modal-close>
-        <span aria-hidden="true">×</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
 
       <div class="modal__header">
-        <p class="eyebrow"><span></span> Secure enrollment</p>
         <h2 id="modalTitle">Complete your subscription</h2>
         <p id="modalDescription">Review payment instructions, upload your transfer proof, then confirm on WhatsApp.</p>
       </div>
@@ -303,7 +436,7 @@
       <div class="modal__selected glass-card glass-card--strong" aria-live="polite">
         <span>Selected package</span>
         <strong id="selectedPackageLabel">Pro Package</strong>
-        <small id="selectedPackageMeta">EGP 2,800 • 8 Weeks</small>
+        <small id="selectedPackageMeta">EGP 2,800 · 8 Weeks</small>
       </div>
 
       <div class="checkout-step" id="checkoutStep">
@@ -314,20 +447,24 @@
 
             <div class="payment-methods">
               <article class="payment-card glass-card">
-                <div class="payment-card__icon" aria-hidden="true">VC</div>
+                <div class="payment-card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8Z"/><path d="M2 10h20"/><path d="M8 14h4"/></svg>
+                </div>
                 <div class="payment-card__content">
                   <h4>Vodafone Cash</h4>
-                  <p>Account name: <strong>Coach Name</strong></p>
-                  <code id="vodafoneNumber">0100 000 0000</code>
+                  <p>Account name: <strong>Ahmed Hatem</strong></p>
+                  <code id="vodafoneNumber">010 6542 1158</code>
                 </div>
                 <button class="copy-button" type="button" data-copy-target="vodafoneNumber">Copy</button>
               </article>
 
               <article class="payment-card glass-card">
-                <div class="payment-card__icon" aria-hidden="true">IP</div>
+                <div class="payment-card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
                 <div class="payment-card__content">
                   <h4>InstaPay</h4>
-                  <p>Account name: <strong>Coach Name</strong></p>
+                  <p>Account name: <strong>Ahmed Hatem</strong></p>
                   <code id="instapayAddress">coachname@instapay</code>
                 </div>
                 <button class="copy-button" type="button" data-copy-target="instapayAddress">Copy</button>
@@ -344,13 +481,13 @@
             <h3 id="customer-title">Customer Information</h3>
             <form class="customer-form" id="customerForm" novalidate>
               <div class="field-group">
-                <label for="fullName">Full Name</label>
+                <label for="fullName">Full Name <span class="required" aria-hidden="true">*</span></label>
                 <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Your full name" required aria-describedby="fullNameError" />
                 <p class="field-error" id="fullNameError" aria-live="polite"></p>
               </div>
 
               <div class="field-group">
-                <label for="phoneNumber">Phone Number</label>
+                <label for="phoneNumber">Phone Number <span class="required" aria-hidden="true">*</span></label>
                 <input id="phoneNumber" name="phoneNumber" type="tel" autocomplete="tel" inputmode="tel" placeholder="01XXXXXXXXX" required aria-describedby="phoneNumberError" />
                 <p class="field-error" id="phoneNumberError" aria-live="polite"></p>
               </div>
@@ -366,7 +503,7 @@
                     </div>
                     <strong>Upload Payment Proof</strong>
                     <p>Tap to choose from gallery or drag and drop your screenshot here.</p>
-                    <small>JPG, PNG, WEBP, HEIC • Max 5MB</small>
+                    <small>JPG, PNG, WEBP, HEIC · Max 5MB</small>
                   </div>
 
                   <div class="upload-loading" id="uploadLoading" hidden>

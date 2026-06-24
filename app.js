@@ -8,7 +8,7 @@
 
   const CONFIG = {
     // Replace this placeholder with the coach's real WhatsApp number in international format, e.g. 201001234567.
-    coachWhatsAppNumber: "201XXXXXXXXX",
+    coachWhatsAppNumber: "201065421158",
     maxFileSizeBytes: 5 * 1024 * 1024,
     acceptedExtensions: ["jpg", "jpeg", "png", "webp", "heic", "heif"],
     loadingDelayMs: 650,
@@ -85,6 +85,7 @@
     initTypewriter();
     initRipple();
     initSplitLines();
+    initNavScroll();
   }
 
   function cacheElements() {
@@ -906,6 +907,25 @@ ${phoneNumber}
           });
         }, { threshold: 0.3 });
         obs.observe(h);
+      }
+    });
+  }
+  /* ─── Nav Scroll Effect ─── */
+  function initNavScroll() {
+    const header = document.getElementById("siteHeader");
+    if (!header) return;
+    const checkScroll = () => {
+      header.toggleAttribute("data-scrolled", window.scrollY > 60);
+    };
+    checkScroll();
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          checkScroll();
+          ticking = false;
+        });
+        ticking = true;
       }
     });
   }
