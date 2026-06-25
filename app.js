@@ -1,13 +1,7 @@
-/*
-  Premium Online Coaching Platform
-  Vanilla JavaScript checkout, upload preview, copy actions, and WhatsApp handoff.
-*/
-
 (() => {
   "use strict";
 
   const CONFIG = {
-    // Replace this placeholder with the coach's real WhatsApp number in international format, e.g. 201001234567.
     coachWhatsAppNumber: "201065421158",
     maxFileSizeBytes: 5 * 1024 * 1024,
     acceptedExtensions: ["jpg", "jpeg", "png", "webp", "heic", "heif"],
@@ -16,7 +10,7 @@
     particleCount: 24
   };
 
-  const SCROLL_CONFIG = { threshold: 0.12, rootMargin: "0px 0px -60px 0px" };
+  const SCROLL_CONFIG = { threshold: 0.08, rootMargin: "0px 0px -40px 0px" };
 
   const state = {
     selectedPackage: null,
@@ -79,13 +73,12 @@
     initCounters();
     initNavHighlight();
     initProgressBar();
-    initParticles();
     initMagneticButtons();
     initParallaxCards();
     initTypewriter();
     initRipple();
-    initSplitLines();
     initNavScroll();
+    initNavToggle();
   }
 
   function cacheElements() {
@@ -124,7 +117,6 @@
   function hydrateDefaultPackage() {
     const selectedCard = document.querySelector(".package-card.is-selected") || elements.packageCards[0];
     if (!selectedCard) return;
-
     selectPackage(selectedCard, { silent: true });
   }
 
@@ -133,7 +125,6 @@
       card.addEventListener("click", (event) => {
         const clickedSubscribe = event.target.closest(selectors.subscribeButtons);
         selectPackage(card);
-
         if (clickedSubscribe) {
           openModal();
         }
@@ -151,7 +142,6 @@
 
   function selectPackage(card, options = {}) {
     if (!card) return;
-
     elements.packageCards.forEach((packageCard) => {
       const isCurrent = packageCard === card;
       packageCard.classList.toggle("is-selected", isCurrent);
@@ -173,7 +163,6 @@
 
   function updateSelectedPackageUI() {
     if (!state.selectedPackage) return;
-
     elements.selectedPackageLabel.textContent = state.selectedPackage.name;
     elements.selectedPackageMeta.textContent = `${state.selectedPackage.price} • ${state.selectedPackage.duration}`;
   }
@@ -185,12 +174,10 @@
 
     document.addEventListener("keydown", (event) => {
       if (elements.modal.hidden) return;
-
       if (event.key === "Escape") {
         closeModal();
         return;
       }
-
       if (event.key === "Tab") {
         trapModalFocus(event);
       }
@@ -278,9 +265,7 @@
       try {
         await navigator.clipboard.writeText(text);
         return true;
-      } catch (error) {
-        // Fallback below.
-      }
+      } catch (error) {}
     }
 
     const tempInput = document.createElement("textarea");
@@ -390,17 +375,11 @@
     const hasValidExtension = CONFIG.acceptedExtensions.includes(extension);
 
     if (!hasValidMime && !hasValidExtension) {
-      return {
-        isValid: false,
-        message: "Please upload a valid image file: JPG, PNG, WEBP, HEIC, or HEIF."
-      };
+      return { isValid: false, message: "Please upload a valid image file: JPG, PNG, WEBP, HEIC, or HEIF." };
     }
 
     if (file.size > CONFIG.maxFileSizeBytes) {
-      return {
-        isValid: false,
-        message: "The screenshot is too large. Please upload an image under 5MB."
-      };
+      return { isValid: false, message: "The screenshot is too large. Please upload an image under 5MB." };
     }
 
     return { isValid: true, message: "" };
@@ -545,7 +524,6 @@
       phoneNumber: elements.phoneNumber,
       paymentProof: elements.paymentProof
     };
-
     return fieldMap[field];
   }
 
@@ -554,12 +532,10 @@
       elements.fullName.focus({ preventScroll: false });
       return;
     }
-
     if (elements.phoneNumber.classList.contains("is-invalid")) {
       elements.phoneNumber.focus({ preventScroll: false });
       return;
     }
-
     if (elements.uploadBox.getAttribute("aria-invalid") === "true") {
       elements.uploadBox.focus({ preventScroll: false });
     }
@@ -670,7 +646,7 @@ ${phoneNumber}
     window.setTimeout(() => {
       toast.style.opacity = "0";
       toast.style.transform = "translateY(12px)";
-      toast.style.transition = "opacity 220ms ease, transform 220ms ease";
+      toast.style.transition = "opacity 220ms var(--ease-mass), transform 220ms var(--ease-mass)";
     }, CONFIG.toastDurationMs - 250);
 
     window.setTimeout(() => {
@@ -678,9 +654,9 @@ ${phoneNumber}
     }, CONFIG.toastDurationMs);
   }
 
-  /* ─── Scroll Reveal ─── */
+  /* ─── Scroll Reveal (fade + blur) ─── */
   function initScrollReveal() {
-    const targets = document.querySelectorAll(".reveal, .reveal-scale, .reveal-left, .reveal-right, .stagger-children");
+    const targets = document.querySelectorAll(".reveal-fade");
     if (!targets.length) return;
     if (!("IntersectionObserver" in window)) {
       targets.forEach((el) => el.classList.add("is-visible"));
@@ -717,7 +693,7 @@ ${phoneNumber}
         }
       });
     }, { threshold: 0.5 });
-    const parent = counters[0]?.closest(".trust-strip, .trust-metrics, .trust__inner");
+    const parent = counters[0]?.closest(".trust-strip, .trust-metrics, .trust__card");
     if (parent) obs.observe(parent); else if (counters[0]) obs.observe(counters[0]);
   }
 
@@ -731,9 +707,6 @@ ${phoneNumber}
       el.textContent = val + suffix;
       if (t < 1) requestAnimationFrame(tick);
     }
-    // Bounce icon on counter start
-    const icon = el.closest(".trust-strip__item, .trust-metrics div")?.querySelector("strong");
-    if (icon) icon.classList.add("counter-bounce");
     requestAnimationFrame(tick);
   }
 
@@ -771,23 +744,6 @@ ${phoneNumber}
         ticking = true;
       }
     });
-  }
-
-  /* ─── Particles ─── */
-  function initParticles() {
-    const container = document.getElementById("particles");
-    if (!container) return;
-    for (let i = 0; i < CONFIG.particleCount; i++) {
-      const p = document.createElement("div");
-      p.className = "particle";
-      p.style.left = Math.random() * 100 + "%";
-      p.style.bottom = "-10px";
-      p.style.width = p.style.height = (2 + Math.random() * 4) + "px";
-      p.style.animationDuration = (6 + Math.random() * 8) + "s";
-      p.style.animationDelay = Math.random() * 10 + "s";
-      p.style.opacity = 0.2 + Math.random() * 0.4;
-      container.appendChild(p);
-    }
   }
 
   /* ─── Magnetic Buttons ─── */
@@ -868,54 +824,21 @@ ${phoneNumber}
     });
   }
 
-  /* ─── Split Heading Lines ─── */
-  function initSplitLines() {
-    const headings = document.querySelectorAll("h1, h2");
-    if (!headings.length) return;
-    headings.forEach((h) => {
-      // Skip if heading already has inner HTML (spans, etc.)
-      if (h.children.length > 0) return;
-      const words = h.textContent.trim().split(/\s+/);
-      if (words.length < 4) return;
-      h.innerHTML = "";
-      const lines = [];
-      let current = [];
-      words.forEach((w) => {
-        current.push(w);
-        if (current.length >= 3) {
-          lines.push(current.join(" "));
-          current = [];
-        }
-      });
-      if (current.length) lines.push(current.join(" "));
-      if (lines.length < 2) return;
-      lines.forEach((line) => {
-        const span = document.createElement("span");
-        span.className = "split-line";
-        const inner = document.createElement("span");
-        inner.textContent = line;
-        span.appendChild(inner);
-        h.appendChild(span);
-      });
-      if ("IntersectionObserver" in window) {
-        const obs = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.querySelectorAll(".split-line").forEach((l) => l.classList.add("is-visible"));
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.3 });
-        obs.observe(h);
-      }
-    });
-  }
   /* ─── Nav Scroll Effect ─── */
   function initNavScroll() {
-    const header = document.getElementById("siteHeader");
-    if (!header) return;
+    const nav = document.getElementById("mainNav");
+    if (!nav) return;
+    let lastScroll = 0;
     const checkScroll = () => {
-      header.toggleAttribute("data-scrolled", window.scrollY > 60);
+      const cur = window.scrollY;
+      if (cur < 80) {
+        nav.removeAttribute("data-hidden");
+      } else if (cur > lastScroll) {
+        nav.setAttribute("data-hidden", "");
+      } else {
+        nav.removeAttribute("data-hidden");
+      }
+      lastScroll = cur;
     };
     checkScroll();
     let ticking = false;
@@ -929,4 +852,40 @@ ${phoneNumber}
       }
     });
   }
+
+  /* ─── Nav Hamburger Toggle ─── */
+  function initNavToggle() {
+    const toggle = document.getElementById("navToggle");
+    const overlay = document.getElementById("navOverlay");
+    if (!toggle || !overlay) return;
+    const closeOverlay = () => {
+      toggle.setAttribute("aria-expanded", "false");
+      overlay.setAttribute("aria-hidden", "true");
+      overlay.removeAttribute("open");
+      document.body.style.overflow = "";
+    };
+    const openOverlay = () => {
+      toggle.setAttribute("aria-expanded", "true");
+      overlay.removeAttribute("aria-hidden");
+      overlay.setAttribute("open", "");
+      document.body.style.overflow = "hidden";
+    };
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      expanded ? closeOverlay() : openOverlay();
+    });
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeOverlay();
+    });
+    document.querySelectorAll("[data-nav-close]").forEach((el) => {
+      el.addEventListener("click", closeOverlay);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        closeOverlay();
+        toggle.focus();
+      }
+    });
+  }
+
 })();
